@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,6 @@ class HomeController extends Controller
     }
 
     public function getUser() {
-        return response(User::all()->toJson(), 200);
+        return response(Auth::user(), 200);
     }
 }

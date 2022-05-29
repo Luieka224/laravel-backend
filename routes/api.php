@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::middleware('auth:sanctum')->apiResource('/book', BookController::class);
-Route::apiResource('/book', BookController::class);
+Route::middleware('auth:sanctum')->apiResource('/book', BookController::class);
+// Route::apiResource('/book', BookController::class);
+// Route::get('/get-user', [HomeController::class, 'getUser']);
 Route::middleware('auth:sanctum')->get('/get-user', [HomeController::class, 'getUser']);
